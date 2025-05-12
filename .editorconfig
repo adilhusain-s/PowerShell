@@ -117,6 +117,8 @@ csharp_prefer_simple_default_expression = true:suggestion
 
 dotnet_code_quality_unused_parameters = non_public:suggestion
 
+dotnet_analyzer_diagnostic.severity = suggestion
+
 # CSharp code style settings:
 [*.cs]
 

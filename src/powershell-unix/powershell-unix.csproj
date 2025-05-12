@@ -1,20 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\..\PowerShell.Common.props"/>
+  <Import Project="..\..\PowerShell.Common.props" />
 
   <PropertyGroup>
     <Description>PowerShell top-level project with .NET CLI host</Description>
     <AssemblyName>pwsh</AssemblyName>
     <OutputType>Exe</OutputType>
-    <TieredCompilation>true</TieredCompilation>
-    <TieredCompilationQuickJit>true</TieredCompilationQuickJit>
-    <TieredCompilationQuickJitForLoops>true</TieredCompilationQuickJitForLoops>
-    <RuntimeIdentifiers>linux-x64;osx-x64;</RuntimeIdentifiers>
+    <RuntimeIdentifiers>linux-ppc64le</RuntimeIdentifiers>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Include="..\powershell\Program.cs" Exclude="bin\**;obj\**;**\*.xproj;packages\**" />
-    <Content Include="..\Modules\Unix\**\*;..\Modules\Shared\**\*" >
+    <Content Include="..\Modules\Unix\**\*;..\Modules\Shared\**\*">
       <Link>Modules\%(RecursiveDir)\%(FileName)%(Extension)</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
@@ -43,4 +41,4 @@
     <ProjectReference Include="..\Microsoft.PowerShell.SDK\Microsoft.PowerShell.SDK.csproj" />
   </ItemGroup>
 
- </Project>
+</Project>

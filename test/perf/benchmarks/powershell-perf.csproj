@@ -8,6 +8,7 @@
     <Description>PowerShell Performance Tests</Description>
     <AssemblyName>powershell-perf</AssemblyName>
     <OutputType>Exe</OutputType>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
 
     <NoWarn>$(NoWarn);CS8002</NoWarn>
     <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
