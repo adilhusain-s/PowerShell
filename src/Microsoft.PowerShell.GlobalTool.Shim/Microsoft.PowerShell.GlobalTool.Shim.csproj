@@ -17,3 +17,4 @@
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk.WindowsDesktop" Condition="'$(SDKToUse)' == 'Microsoft.NET.Sdk.WindowsDesktop' " />
 
 </Project>
+

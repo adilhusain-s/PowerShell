@@ -36,3 +36,4 @@
     <ProjectReference Include="..\Microsoft.PowerShell.Commands.Utility\Microsoft.PowerShell.Commands.Utility.csproj" />
   </ItemGroup>
 </Project>
+

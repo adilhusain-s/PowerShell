@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <AssemblyName>MyApp</AssemblyName>
     <OutputType>Exe</OutputType>
-    <RuntimeIdentifiers>linux-ppc64le</RuntimeIdentifiers>
+    <RuntimeIdentifiers>linux-ppc64le;linux-s390x;linux-x64</RuntimeIdentifiers>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
   </PropertyGroup>
 
@@ -15,3 +15,4 @@
   </ItemGroup>
 
 </Project>
+

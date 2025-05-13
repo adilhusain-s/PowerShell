@@ -6,7 +6,7 @@
     <Description>PowerShell xUnit Tests</Description>
     <AssemblyName>powershell-tests</AssemblyName>
     <GenerateProgramFile>falsee</GenerateProgramFile>
-    <RuntimeIdentifiers>linux-ppc64le</RuntimeIdentifiers>
+    <RuntimeIdentifiers>linux-ppc64le;linux-s390x;linux-x64</RuntimeIdentifiers>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -53,3 +53,4 @@
     </Content>
   </ItemGroup>
 </Project>
+

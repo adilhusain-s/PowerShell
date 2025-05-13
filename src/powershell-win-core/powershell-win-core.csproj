@@ -8,7 +8,7 @@
     <TieredCompilation>true</TieredCompilation>
     <TieredCompilationQuickJit>true</TieredCompilationQuickJit>
     <TieredCompilationQuickJitForLoops>true</TieredCompilationQuickJitForLoops>
-    <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+    <RuntimeIdentifiers>linux-ppc64le;linux-s390x;linux-x64</RuntimeIdentifiers>
     <RootNamespace>Microsoft.PowerShell</RootNamespace>
     <ApplicationManifest>..\..\assets\pwsh.manifest</ApplicationManifest>
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
@@ -56,3 +56,4 @@
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
 
 </Project>
+

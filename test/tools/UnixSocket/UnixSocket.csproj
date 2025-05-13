@@ -8,8 +8,9 @@
     <OutputType>Exe</OutputType>
     <TieredCompilation>true</TieredCompilation>
     <TieredCompilationQuickJit>true</TieredCompilationQuickJit>
-    <RuntimeIdentifiers>linux-ppc64le</RuntimeIdentifiers>
+    <RuntimeIdentifiers>linux-ppc64le;linux-s390x;linux-x64</RuntimeIdentifiers>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
   </PropertyGroup>
 
 </Project>
+

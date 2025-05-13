@@ -9,7 +9,7 @@
     <OutputType>Exe</OutputType>
     <TieredCompilation>true</TieredCompilation>
     <TieredCompilationQuickJit>true</TieredCompilationQuickJit>
-    <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+    <RuntimeIdentifiers>linux-ppc64le;linux-s390x;linux-x64</RuntimeIdentifiers>
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <TargetPlatformVersion>8.0</TargetPlatformVersion>
   </PropertyGroup>
@@ -68,3 +68,4 @@
   </ItemGroup>
 
 </Project>
+

@@ -6,7 +6,7 @@
     <Description>PowerShell top-level project with .NET CLI host</Description>
     <AssemblyName>pwsh</AssemblyName>
     <OutputType>Exe</OutputType>
-    <RuntimeIdentifiers>linux-ppc64le</RuntimeIdentifiers>
+    <RuntimeIdentifiers>linux-ppc64le;linux-s390x;linux-x64</RuntimeIdentifiers>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
   </PropertyGroup>
 
@@ -42,3 +42,4 @@
   </ItemGroup>
 
 </Project>
+
