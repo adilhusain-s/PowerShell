@@ -12,6 +12,11 @@
     <RuntimeIdentifiers>linux-x64;osx-x64;</RuntimeIdentifiers>
   </PropertyGroup>
 
+  <!-- on a ppc64le machine, completely replace with only linux-ppc64le -->
+  <PropertyGroup Condition="'$(PROCESSOR_ARCHITECTURE)' == 'ppc64le'">
+    <RuntimeIdentifiers>linux-ppc64le</RuntimeIdentifiers>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Include="..\powershell\Program.cs" Exclude="bin\**;obj\**;**\*.xproj;packages\**" />
     <Content Include="..\Modules\Unix\**\*;..\Modules\Shared\**\*" >
