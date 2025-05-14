@@ -9,12 +9,16 @@
     <TieredCompilation>true</TieredCompilation>
     <TieredCompilationQuickJit>true</TieredCompilationQuickJit>
     <TieredCompilationQuickJitForLoops>true</TieredCompilationQuickJitForLoops>
-    <RuntimeIdentifiers>linux-x64;osx-x64;</RuntimeIdentifiers>
   </PropertyGroup>
 
-  <!-- on a ppc64le machine, completely replace with only linux-ppc64le -->
+  <!-- RID for PowerPC 64-bit Little Endian -->
   <PropertyGroup Condition="'$(PROCESSOR_ARCHITECTURE)' == 'ppc64le'">
     <RuntimeIdentifiers>linux-ppc64le</RuntimeIdentifiers>
+  </PropertyGroup>
+
+  <!-- RID for x64 platforms -->
+  <PropertyGroup Condition="'$(PROCESSOR_ARCHITECTURE)' == 'x86_64' Or '$(PROCESSOR_ARCHITECTURE)' == 'AMD64'">
+    <RuntimeIdentifiers>linux-x64;osx-x64</RuntimeIdentifiers>
   </PropertyGroup>
 
   <ItemGroup>
@@ -48,4 +52,4 @@
     <ProjectReference Include="..\Microsoft.PowerShell.SDK\Microsoft.PowerShell.SDK.csproj" />
   </ItemGroup>
 
- </Project>
+</Project>
