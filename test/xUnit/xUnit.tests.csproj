@@ -1,12 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+        <Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
 
   <Import Project="../Test.Common.props" />
+
+  <!-- RID for PowerPC 64-bit Little Endian -->
+  <PropertyGroup Condition="'$(PROCESSOR_ARCHITECTURE)' == 'ppc64le'">
+    <RuntimeIdentifiers>linux-ppc64le</RuntimeIdentifiers>
+  </PropertyGroup>
+
+  <!-- RID for x64 platforms -->
+  <PropertyGroup Condition="'$(PROCESSOR_ARCHITECTURE)' == 'x86_64' Or '$(PROCESSOR_ARCHITECTURE)' == 'AMD64'">
+    <RuntimeIdentifiers>win-x86;win-x64;osx-x64;linux-x64</RuntimeIdentifiers>
+  </PropertyGroup>
 
   <PropertyGroup>
     <Description>PowerShell xUnit Tests</Description>
     <AssemblyName>powershell-tests</AssemblyName>
     <GenerateProgramFile>true</GenerateProgramFile>
-    <RuntimeIdentifiers>win-x86;win-x64;osx-x64;linux-x64</RuntimeIdentifiers>
   </PropertyGroup>
 
   <PropertyGroup>

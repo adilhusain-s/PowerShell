@@ -1,5 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <!-- RID for PowerPC 64-bit Little Endian -->
+  <PropertyGroup Condition="'$(PROCESSOR_ARCHITECTURE)' == 'ppc64le'">
+    <RuntimeIdentifiers>linux-ppc64le</RuntimeIdentifiers>
+  </PropertyGroup>
+
+  <!-- RID for x64 platforms -->
+  <PropertyGroup Condition="'$(PROCESSOR_ARCHITECTURE)' == 'x86_64' Or '$(PROCESSOR_ARCHITECTURE)' == 'AMD64'">
+    <RuntimeIdentifiers>win-x86;win-x64;osx-x64;linux-x64</RuntimeIdentifiers>
+  </PropertyGroup>
+
   <PropertyGroup>
     <Description>Generates CorePsTypeCatalog.cs given powershell.inc</Description>
     <TargetFramework>net9.0</TargetFramework>
@@ -8,7 +18,6 @@
     <OutputType>Exe</OutputType>
     <TieredCompilation>true</TieredCompilation>
     <TieredCompilationQuickJit>true</TieredCompilationQuickJit>
-    <RuntimeIdentifiers>win-x86;win-x64;osx-x64;linux-x64</RuntimeIdentifiers>
   </PropertyGroup>
 
 </Project>

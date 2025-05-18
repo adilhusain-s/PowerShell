@@ -4,6 +4,15 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <AssemblyName>MyApp</AssemblyName>
     <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <!-- RID for PowerPC 64-bit Little Endian -->
+  <PropertyGroup Condition="'$(PROCESSOR_ARCHITECTURE)' == 'ppc64le'">
+    <RuntimeIdentifiers>linux-ppc64le</RuntimeIdentifiers>
+  </PropertyGroup>
+
+  <!-- RID for x64 platforms -->
+  <PropertyGroup Condition="'$(PROCESSOR_ARCHITECTURE)' == 'x86_64' Or '$(PROCESSOR_ARCHITECTURE)' == 'AMD64'">
     <RuntimeIdentifiers>win10-x64;linux-x64;osx-x64</RuntimeIdentifiers>
   </PropertyGroup>
 
