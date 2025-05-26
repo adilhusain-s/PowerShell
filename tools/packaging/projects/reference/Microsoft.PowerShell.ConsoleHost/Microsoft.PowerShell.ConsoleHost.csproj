@@ -9,7 +9,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.Management.Automation">
-    <HintPath>$(SmaRefFile)</HintPath>
+      <HintPath>$(SmaRefFile)</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

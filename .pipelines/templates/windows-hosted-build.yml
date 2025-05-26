@@ -1,7 +1,7 @@
 parameters:
-  Architecture: 'x64'
-  BuildConfiguration: 'release'
-  JobName: 'build_windows'
+  Architecture: "x64"
+  BuildConfiguration: "release"
+  JobName: "build_windows"
 
 jobs:
 - job: build_windows_${{ parameters.Architecture }}_${{ parameters.BuildConfiguration }}
@@ -310,13 +310,13 @@ jobs:
     displayName: 'Pack Windows.x64 global tool'
     condition: and(succeeded(), eq(variables['Architecture'], 'fxdependent'))
 
-  - task: onebranch.pipeline.signing@1
-    displayName: Sign nupkg files
-    inputs:
-      command: 'sign'
-      cp_code: 'CP-401405'
-      files_to_sign: '**\*.nupkg'
-      search_root: '$(ob_outputDirectory)\globaltool'
-    condition: and(succeeded(), eq(variables['Architecture'], 'fxdependent'))
+      - task: onebranch.pipeline.signing@1
+        displayName: Sign nupkg files
+        inputs:
+          command: "sign"
+          cp_code: "CP-401405"
+          files_to_sign: '**\*.nupkg'
+          search_root: '$(ob_outputDirectory)\globaltool'
+        condition: and(succeeded(), eq(variables['Architecture'], 'fxdependent'))
 
-  - template: /.pipelines/templates/step/finalize.yml@self
+      - template: /.pipelines/templates/step/finalize.yml@self

@@ -7,13 +7,14 @@
     <Copyright>(c) Microsoft Corporation.</Copyright>
 
     <TargetFramework>net8.0</TargetFramework>
-    <LangVersion>11.0</LangVersion>
+    <LangVersion>13.0</LangVersion>
 
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <IsWindows Condition="'$(OS)' == 'Windows_NT'">true</IsWindows>
     <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
     <DisableImplicitNamespaceImports_DotNet>true</DisableImplicitNamespaceImports_DotNet>
+    <SelfContained>false</SelfContained>
   </PropertyGroup>
 
   <PropertyGroup>

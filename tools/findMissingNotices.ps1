@@ -145,7 +145,7 @@ function Get-NuGetPublicVersion {
         [string]$Version
     )
 
-    if($nugetPublicVersionCache.ContainsKey($Name)) {
+    if ($nugetPublicVersionCache.ContainsKey($Name)) {
         return $nugetPublicVersionCache[$Name]
     }
 
@@ -165,14 +165,16 @@ function Get-NuGetPublicVersion {
         }
 
         $_ | Add-Member -Name SemVer -MemberType NoteProperty -Value $packageVersion -PassThru
-    } | Where-Object { $_.SemVer -le $desiredVersion } | Sort-Object -Property semver -Descending | Select-Object -First 1 -ExpandProperty Version
+    } | Where-Object {
+        $_.SemVer -le $desiredVersion
+    } | Sort-Object -Property semver -Descending | Select-Object -First 1 -ExpandProperty Version
 
-    if(!$publicVersion) {
+    if (!$publicVersion) {
         Write-Warning "No public version found for $Name, using $Version"
         $publicVersion = $Version
     }
 
-    if(!$nugetPublicVersionCache.ContainsKey($Name)) {
+    if (!$nugetPublicVersionCache.ContainsKey($Name)) {
         $nugetPublicVersionCache.Add($Name, $publicVersion)
     }
 
@@ -345,7 +347,7 @@ if ($IsStable) {
 $count = $newRegistrations.Count
 $newJson = @{
     Registrations = $newRegistrations
-     '$schema' = "https://json.schemastore.org/component-detection-manifest.json"
+    '$schema'     = "https://json.schemastore.org/component-detection-manifest.json"
 } | ConvertTo-Json -depth 99
 
 if ($Fix -and $registrationChanged) {
