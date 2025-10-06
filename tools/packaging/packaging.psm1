@@ -614,6 +614,7 @@ function Start-PSPackage {
                     'linux-arm64' { 'arm64' }
                     'linux-arm'   { 'armhf' } # Assuming arm32 is armhf for Debian
                     'linux-ppc64le' { 'ppc64el' } # Debian uses 'ppc64el' for ppc64le
+                    'linux-s390x' { 's390x' }
                     'linux-x64'   { 'amd64' }
                     default       { throw "Unsupported runtime architecture: $Runtime" }
                 }
@@ -1044,7 +1045,7 @@ function New-UnixPackage {
         # Host architecture values allowed for rpm type packages include: x86_64, aarch64, native, all, noarch, any
         # Host architecture values allowed for osxpkg type packages include: x86_64, arm64
         [string]
-        [ValidateSet("x86_64", "amd64", "aarch64", "arm64", "ppc64el", "native", "all", "noarch", "any")]
+        [ValidateSet("x86_64", "amd64", "aarch64", "arm64", "ppc64el", "s390x", "native", "all", "noarch", "any")]
         $HostArchitecture,
 
         [Switch]
