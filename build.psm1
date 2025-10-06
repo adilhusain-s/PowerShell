@@ -325,6 +325,7 @@ function Start-PSBuild {
                      "linux-arm64",
                      "linux-x64",
                     "linux-ppc64le",
+                     "linux-s390x",
                      "osx-arm64",
                      "osx-x64",
                      "win-arm",
@@ -504,6 +505,12 @@ Fix steps:
     # we must explicitly disable ReadyToRun compilation for this runtime.
     # This addresses the NETSDK1094 error for this specific platform.
     if ($Options.Runtime -eq 'linux-ppc64le') {
+        $Arguments += "/property:PublishReadyToRun=false"
+        $Arguments += "/property:WarnAsError=false" # Do not treat warnings as errors for ppc64le
+        $Arguments += "/property:RunAnalyzers=false" # Disable analyzers for ppc64le
+    }
+
+    if ($Options.Runtime -eq 'linux-s390x') {
         $Arguments += "/property:PublishReadyToRun=false"
         $Arguments += "/property:WarnAsError=false" # Do not treat warnings as errors for ppc64le
         $Arguments += "/property:RunAnalyzers=false" # Disable analyzers for ppc64le
@@ -1012,6 +1019,7 @@ function New-PSOptions {
                      "linux-arm64",
                      "linux-x64",
                     "linux-ppc64le",
+                     "linux-s390x",
                      "osx-arm64",
                      "osx-x64",
                      "win-arm",
@@ -3813,6 +3821,9 @@ function Clear-NativeDependencies
         }
         '.*-ppc64le' {
             $diasymFileName = $diasymFileNamePattern -f 'ppc64le'
+        }
+        '.*-s390x' {
+            $diasymFileName = $diasymFileNamePattern -f 's390x'
         }
         'fxdependent.*' {
             Write-Verbose -Message "$($script:Options.Runtime) is a fxdependent runtime, no cleanup needed in pwsh.deps.json" -Verbose
